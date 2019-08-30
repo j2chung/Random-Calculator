@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en" id="">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>Calculator</title>
+  <script type="text/javascript">
+    var input = "";
+
+    function addExp(number) {
+      input += number.value;
+      document.getElementById('number').value = input;
+    };
+
+    function solve() {
+      var answer = 0;
+      var textinput = document.getElementById('number');
+      if (textinput && textinput.value) {
+        answer = eval(textinput.value);
+        document.getElementById('number').value = answer;
+        input = "";
+      } else {
+        answer = eval(input);
+        document.getElementById('number').value = answer;
+        input = "";
+      }
+    };
+  </script>
+
+</head>
+<body>
+  <form class="" action="#" method="post">
+    <input type= "text" id = "number" name="number" value="0">
+    <br>
+    <button type="button" name="one" value = "1" onclick="addExp(this)">1</button>
+    <button type="button" name="two" value = "2" onclick="addExp(this)">2</button>
+    <button type="button" name="three" value = "3" onclick="addExp(this)">3</button>
+    <button type="button" name="plus" value = "+" onclick="addExp(this)">+</button>
+    <button type="button" name="minus" value = "-" onclick="addExp(this)">-</button>
+    <br>
+    <br>
+    <button type="button" name="four" value = "4" onclick="addExp(this)">4</button>
+    <button type="button" name="five" value = "5" onclick="addExp(this)">5</button>
+    <button type="button" name="six" value = "6" onclick="addExp(this)">6</button>
+    <button type="button" name="times" value = "*" onclick="addExp(this)">*</button>
+    <button type="button" name="divide" value = "/" onclick="addExp(this)">/</button>
+    <br>
+    <br>
+    <button type="button" name="seven" value = "7" onclick="addExp(this)">7</button>
+    <button type="button" name="eight" value = "8" onclick="addExp(this)">8</button>
+    <button type="button" name="nine" value = "9" onclick="addExp(this)">9</button>
+    <button type="button" name="nine" value = "0" onclick="addExp(this)">0</button>
+    <br>
+    <br>
+    <button type="button" name="answer" onclick="solve()">answer</button>
+  </form>
+</body>
+</html>
